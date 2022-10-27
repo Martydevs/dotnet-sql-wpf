@@ -67,7 +67,7 @@ Public Class Form1
 
     Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.Click
         Dim Fila As DataGridViewRow = DataGridView1.CurrentRow
-        txtmatricula.Text = CStr(Fila.Cells(0).Value)
+        txtmatricula.Text = (Fila.Cells(0).Value)
         txtnombre.Text = (Fila.Cells(1).Value)
         txtpaterno.Text = (Fila.Cells(2).Value)
         txtmaterno.Text = (Fila.Cells(3).Value)
@@ -92,6 +92,7 @@ Public Class Form1
                 .Parameters.AddWithValue("@Matricula", txtmatricula.Text)
             End With
             Dim DA As New SqlDataAdapter(CMD)
+            DA.Fill(DT)
             Me.DataGridView1.DataSource = DT
 
             MsgBox("Se modifico el registro", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Alumno")
