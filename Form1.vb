@@ -96,9 +96,7 @@ Public Class Form1
 
             MsgBox("Se modifico el registro", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Alumno")
             Call MostrarAlumnos()
-
-
-            conexion.Close()
         End If
+        conexion.Close()
     End Sub
 End Class
