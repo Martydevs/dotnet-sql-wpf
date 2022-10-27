@@ -64,4 +64,15 @@ Public Class Form1
         End If
         conexion.Close()
     End Sub
+
+    Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.Click
+        Dim Fila As DataGridViewRow = DataGridView1.CurrentRow
+        txtmatricula.Text = CStr(Fila.Cells(0).Value)
+        txtnombre.Text = (Fila.Cells(1).Value)
+        txtpaterno.Text = (Fila.Cells(2).Value)
+        txtmaterno.Text = (Fila.Cells(3).Value)
+        txtdireccion.Text = (Fila.Cells(4).Value)
+
+        DateTimePicker1.Value = CStr(Fila.Cells(5).Value)
+    End Sub
 End Class
