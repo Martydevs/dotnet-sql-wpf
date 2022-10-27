@@ -75,4 +75,28 @@ Public Class Form1
 
         DateTimePicker1.Value = CStr(Fila.Cells(5).Value)
     End Sub
+
+    Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
+        conexion.Open()
+
+        Dim DT As New DataTable
+        Dim CMD As New SqlCommand("sp_ModificarAlumno", conexion)
+        CMD.CommandType = CommandType.StoredProcedure
+        With CMD
+
+            .Parameters.AddWithValue("@Nombre", txtnombre.Text)
+            .Parameters.AddWithValue("@Ap_Paterno", txtpaterno.Text)
+            .Parameters.AddWithValue("@Ap_Materno", txtmaterno.Text)
+            .Parameters.AddWithValue("@Direccion", txtdireccion.Text)
+            .Parameters.AddWithValue("@Fecha_nac", DateTime.Parse(DateTimePicker1.Text))
+            .Parameters.AddWithValue("@Matricula", txtmatricula.Text)
+
+        End With
+        Dim DA As New SqlDataAdapter(CMD)
+        Me.DataGridView1.DataSource = DT
+
+        Call MostrarAlumnos()
+
+        conexion.Close()
+    End Sub
 End Class
