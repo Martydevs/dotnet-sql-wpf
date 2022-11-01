@@ -67,7 +67,7 @@ Public Class Form1
 
     Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.Click
         Dim Fila As DataGridViewRow = DataGridView1.CurrentRow
-        txtmatricula.Text = (Fila.Cells(0).Value)
+        txtmatricula.Text = CStr(Fila.Cells(0).Value)
         txtnombre.Text = (Fila.Cells(1).Value)
         txtpaterno.Text = (Fila.Cells(2).Value)
         txtmaterno.Text = (Fila.Cells(3).Value)
@@ -99,5 +99,37 @@ Public Class Form1
             Call MostrarAlumnos()
         End If
         conexion.Close()
+    End Sub
+
+    'Subrutina para buscar alumnos en base a dos radios, por matricula o apellido paterno'
+    Private Sub btnbuscar_Click(sender As Object, e As EventArgs) Handles btnbuscar.Click
+        If rbtnmatricula.Checked Then
+            Dim DA As New SqlDataAdapter("sp_BuscarMatricula", conexion)
+            DA.SelectCommand.CommandType = CommandType.StoredProcedure
+            DA.SelectCommand.Parameters.AddWithValue("@matricula", txtbuscar.Text)
+
+            Dim DT As New DataTable
+            DA.Fill(DT)
+            DataGridView1.DataSource = DT
+
+        ElseIf rbtnApPaterno.Checked Then
+            Dim DA As New SqlDataAdapter("sp_BuscarApPaterno", conexion)
+            DA.SelectCommand.CommandType = CommandType.StoredProcedure
+            DA.SelectCommand.Parameters.AddWithValue("@Ap_Paterno", txtbuscar)
+
+            Dim DT As New DataTable
+            DA.Fill(DT)
+            DataGridView1.DataSource = DT
+        Else
+            MsgBox("Seleccione un tipo de busqueda", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Alumno")
+        End If
+    End Sub
+
+    Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
+        txtmatricula.Text = ""
+        txtnombre.Text = ""
+        txtpaterno.Text = ""
+        txtmaterno.Text = ""
+        txtdireccion.Text = ""
     End Sub
 End Class

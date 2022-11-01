@@ -23,7 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblmatricula = New System.Windows.Forms.Label()
         Me.lblnombre = New System.Windows.Forms.Label()
         Me.lblpaterno = New System.Windows.Forms.Label()
@@ -37,9 +37,9 @@ Partial Class Form1
         Me.txtmaterno = New System.Windows.Forms.TextBox()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.lblbuscar = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtbuscar = New System.Windows.Forms.TextBox()
         Me.rbtnmatricula = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.rbtnApPaterno = New System.Windows.Forms.RadioButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.btnalta = New System.Windows.Forms.Button()
@@ -182,13 +182,13 @@ Partial Class Form1
         Me.lblbuscar.TabIndex = 14
         Me.lblbuscar.Text = "Buscar"
         '
-        'TextBox1
+        'txtbuscar
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.TextBox1.Location = New System.Drawing.Point(75, 50)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(178, 23)
-        Me.TextBox1.TabIndex = 15
+        Me.txtbuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.txtbuscar.Location = New System.Drawing.Point(75, 50)
+        Me.txtbuscar.Name = "txtbuscar"
+        Me.txtbuscar.Size = New System.Drawing.Size(178, 23)
+        Me.txtbuscar.TabIndex = 15
         '
         'rbtnmatricula
         '
@@ -202,24 +202,24 @@ Partial Class Form1
         Me.rbtnmatricula.Text = "Matricula"
         Me.rbtnmatricula.UseVisualStyleBackColor = True
         '
-        'RadioButton1
+        'rbtnApPaterno
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.RadioButton1.Location = New System.Drawing.Point(111, 96)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(142, 24)
-        Me.RadioButton1.TabIndex = 17
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Apellido paterno"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.rbtnApPaterno.AutoSize = True
+        Me.rbtnApPaterno.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.rbtnApPaterno.Location = New System.Drawing.Point(111, 96)
+        Me.rbtnApPaterno.Name = "rbtnApPaterno"
+        Me.rbtnApPaterno.Size = New System.Drawing.Size(142, 24)
+        Me.rbtnApPaterno.TabIndex = 17
+        Me.rbtnApPaterno.TabStop = True
+        Me.rbtnApPaterno.Text = "Apellido paterno"
+        Me.rbtnApPaterno.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.SteelBlue
-        Me.GroupBox1.Controls.Add(Me.RadioButton1)
+        Me.GroupBox1.Controls.Add(Me.rbtnApPaterno)
         Me.GroupBox1.Controls.Add(Me.rbtnmatricula)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.txtbuscar)
         Me.GroupBox1.Controls.Add(Me.lblbuscar)
         Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
         Me.GroupBox1.Controls.Add(Me.lblfecha_nac)
@@ -232,14 +232,14 @@ Partial Class Form1
         '
         'DataGridView1
         '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(41, 408)
         Me.DataGridView1.Name = "DataGridView1"
@@ -388,9 +388,9 @@ Partial Class Form1
     Friend WithEvents txtmaterno As TextBox
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents lblbuscar As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtbuscar As TextBox
     Friend WithEvents rbtnmatricula As RadioButton
-    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents rbtnApPaterno As RadioButton
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents btnalta As Button
