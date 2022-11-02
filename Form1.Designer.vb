@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,10 +20,11 @@ Partial Class Form1
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblmatricula = New System.Windows.Forms.Label()
         Me.lblnombre = New System.Windows.Forms.Label()
         Me.lblpaterno = New System.Windows.Forms.Label()
@@ -41,7 +42,6 @@ Partial Class Form1
         Me.rbtnmatricula = New System.Windows.Forms.RadioButton()
         Me.rbtnApPaterno = New System.Windows.Forms.RadioButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.btnalta = New System.Windows.Forms.Button()
         Me.btnmodificar = New System.Windows.Forms.Button()
         Me.btnbaja = New System.Windows.Forms.Button()
@@ -52,9 +52,15 @@ Partial Class Form1
         Me.btnsalir = New System.Windows.Forms.Button()
         Me.lblfecha_hora = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.TmdevdbDataSet = New dotnet_sql_wpf.tmdevdbDataSet()
+        Me.AlumnoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.AlumnoTableAdapter = New dotnet_sql_wpf.tmdevdbDataSetTableAdapters.alumnoTableAdapter()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.TmdevdbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AlumnoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblmatricula
@@ -221,7 +227,7 @@ Partial Class Form1
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.Color.SteelBlue
+        Me.GroupBox1.BackColor = System.Drawing.Color.DodgerBlue
         Me.GroupBox1.Controls.Add(Me.rbtnApPaterno)
         Me.GroupBox1.Controls.Add(Me.rbtnmatricula)
         Me.GroupBox1.Controls.Add(Me.txtbuscar)
@@ -234,22 +240,6 @@ Partial Class Form1
         Me.GroupBox1.TabIndex = 18
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "GroupBox1"
-        '
-        'DataGridView1
-        '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(41, 408)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(716, 237)
-        Me.DataGridView1.TabIndex = 19
         '
         'btnalta
         '
@@ -303,7 +293,7 @@ Partial Class Form1
         '
         'GroupBox2
         '
-        Me.GroupBox2.BackColor = System.Drawing.Color.SteelBlue
+        Me.GroupBox2.BackColor = System.Drawing.Color.DodgerBlue
         Me.GroupBox2.Controls.Add(Me.btnmostrar)
         Me.GroupBox2.Controls.Add(Me.btnbuscar)
         Me.GroupBox2.Controls.Add(Me.btnbaja)
@@ -314,12 +304,12 @@ Partial Class Form1
         Me.GroupBox2.Size = New System.Drawing.Size(256, 97)
         Me.GroupBox2.TabIndex = 26
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "GroupBox2"
+        Me.GroupBox2.Text = "Acciones"
         '
         'btnnuevo
         '
         Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnnuevo.Location = New System.Drawing.Point(488, 187)
+        Me.btnnuevo.Location = New System.Drawing.Point(488, 192)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(75, 23)
         Me.btnnuevo.TabIndex = 27
@@ -329,7 +319,7 @@ Partial Class Form1
         'btnsalir
         '
         Me.btnsalir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnsalir.Location = New System.Drawing.Point(569, 187)
+        Me.btnsalir.Location = New System.Drawing.Point(569, 192)
         Me.btnsalir.Name = "btnsalir"
         Me.btnsalir.Size = New System.Drawing.Size(75, 23)
         Me.btnsalir.TabIndex = 28
@@ -338,9 +328,9 @@ Partial Class Form1
         '
         'lblfecha_hora
         '
-        Me.lblfecha_hora.BackColor = System.Drawing.Color.Azure
+        Me.lblfecha_hora.BackColor = System.Drawing.Color.DimGray
         Me.lblfecha_hora.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lblfecha_hora.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.lblfecha_hora.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.lblfecha_hora.Location = New System.Drawing.Point(439, 43)
         Me.lblfecha_hora.Name = "lblfecha_hora"
         Me.lblfecha_hora.Size = New System.Drawing.Size(260, 20)
@@ -351,11 +341,55 @@ Partial Class Form1
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 1000
         '
+        'TmdevdbDataSet
+        '
+        Me.TmdevdbDataSet.DataSetName = "tmdevdbDataSet"
+        Me.TmdevdbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'AlumnoBindingSource
+        '
+        Me.AlumnoBindingSource.DataMember = "alumno"
+        Me.AlumnoBindingSource.DataSource = Me.TmdevdbDataSet
+        '
+        'AlumnoTableAdapter
+        '
+        Me.AlumnoTableAdapter.ClearBeforeFill = True
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.MenuBar
+        DataGridViewCellStyle1.Padding = New System.Windows.Forms.Padding(5)
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridView1.GridColor = System.Drawing.SystemColors.ActiveBorder
+        Me.DataGridView1.Location = New System.Drawing.Point(41, 408)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.Size = New System.Drawing.Size(716, 237)
+        Me.DataGridView1.TabIndex = 19
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.DarkGray
+        Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(800, 670)
         Me.Controls.Add(Me.lblfecha_hora)
         Me.Controls.Add(Me.btnsalir)
@@ -378,8 +412,10 @@ Partial Class Form1
         Me.Text = "Form1"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
+        CType(Me.TmdevdbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AlumnoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -402,7 +438,6 @@ Partial Class Form1
     Friend WithEvents rbtnmatricula As RadioButton
     Friend WithEvents rbtnApPaterno As RadioButton
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents btnalta As Button
     Friend WithEvents btnmodificar As Button
     Friend WithEvents btnbaja As Button
@@ -413,4 +448,8 @@ Partial Class Form1
     Friend WithEvents btnsalir As Button
     Friend WithEvents lblfecha_hora As Label
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents TmdevdbDataSet As tmdevdbDataSet
+    Friend WithEvents AlumnoBindingSource As BindingSource
+    Friend WithEvents AlumnoTableAdapter As tmdevdbDataSetTableAdapters.alumnoTableAdapter
+    Friend WithEvents DataGridView1 As DataGridView
 End Class

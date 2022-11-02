@@ -31,11 +31,13 @@ Public Class Form1
     Sub MostrarAlumnos()
         Dim DA As New SqlDataAdapter("sp_MostrarAlumnos", conexion)
         Dim DS As New DataSet
-        DA.Fill(DS, "alumno")
+        DA.Fill(DS, "Alumno")
         DataGridView1.DataSource = DS.Tables("alumno")
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
+        'TODO: esta línea de código carga datos en la tabla 'TmdevdbDataSet.alumno' Puede moverla o quitarla según sea necesario.
+        Me.AlumnoTableAdapter.Fill(Me.TmdevdbDataSet.alumno)
         Call MostrarAlumnos()
     End Sub
 
