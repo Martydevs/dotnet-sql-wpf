@@ -132,4 +132,14 @@ Public Class Form1
         txtmaterno.Text = ""
         txtdireccion.Text = ""
     End Sub
+
+    Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
+        If MsgBox("Desea salir del formulario?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Alumno") = MsgBoxResult.Yes Then
+            Me.Close()
+        End If
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        lblfecha_hora.Text = DateTime.Now
+    End Sub
 End Class
